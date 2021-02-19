@@ -1,5 +1,5 @@
 let btn1 = document.querySelector('#btn1')
-let name = document.querySelector('#name')
+let nameS = document.querySelector('#name')
 let massege = document.querySelector('#massage')
 let color = document.querySelector('#color')
 let chat = document.querySelector('#chat')
@@ -11,18 +11,22 @@ btn1.addEventListener("mousedown", function() {
     div.append(span1)
     div.append(span2)
     chat.append(div)
-    span1.innerText = name.value + ": "
+    span1.innerText = nameS.value + ": "
     span2.innerText = massege.value
     span1.style.color = color.value
 
     fetch("https://it-academy-hamework2-default-rtdb.firebaseio.com/chat.json", {
             method: "POST",
-            body: JSON.stringify(person)
+            body: JSON.stringify({
+                name: nameS.value,
+                color: color.value,
+                massage: massege.value
+            })
         })
-        .then(function(response) {
-            return response.json(person);
-        })
-        .then(function(data) {
-            addPerson(data.name, person);
-        })
+        // .then(function(response) {
+        //     return response.json(person);
+        // })
+        // .then(function(data) {
+        //     addPerson(data.name, person);
+        // })
 });
