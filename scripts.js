@@ -14,5 +14,15 @@ btn1.addEventListener("mousedown", function() {
     span1.innerText = name.value + ": "
     span2.innerText = massege.value
     span1.style.color = color.value
-})
 
+    fetch("https://it-academy-hamework2-default-rtdb.firebaseio.com/chat.json", {
+            method: "POST",
+            body: JSON.stringify(person)
+        })
+        .then(function(response) {
+            return response.json(person);
+        })
+        .then(function(data) {
+            addPerson(data.name, person);
+        })
+});
