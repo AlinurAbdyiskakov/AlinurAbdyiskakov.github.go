@@ -41,18 +41,3 @@ btn1.addEventListener("mousedown", function() {
         })
 
 });
-
-
-function addPerson(key, person) {
-
-    deleteButton.innerText = 'Delete';
-    tdActions.append(deleteButton);
-    deleteButton.addEventListener('mousedown', function() {
-        fetch(`https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/
-        ${key}.json`, {
-                method: "DELETE"
-            })
-            .then(function(response) {
-                tr.remove();
-            })
-    })
