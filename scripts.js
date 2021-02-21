@@ -11,15 +11,15 @@ btn1.addEventListener("mousedown", function() {
     div.append(span1)
     div.append(span2)
     chat.append(div)
-    span1.innerText = nameS.value + ": "
-    span2.innerText = massege.value
-    span1.style.color = color.val
-        // .then(function(response) {
-        //     return response.json(person);
-        // })
-        // .then(function(data) {
-        //     addPerson(data.name, person);
-        // })
+    span1.innerText = nameS.value + ": ";
+    span2.innerText = massege.value;
+    span1.style.color = color.value;
+    // .then(function(response) {
+    //     return response.json(person);
+    // })
+    // .then(function(data) {
+    //     addPerson(data.name, person);
+    // })
 
     fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/")
         .then(function(response) {
