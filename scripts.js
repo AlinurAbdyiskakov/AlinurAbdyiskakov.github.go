@@ -40,4 +40,11 @@ btn1.addEventListener("mousedown", function() {
             }
         })
 
+    setInterval(() => {
+        $.get("/").then(function(html) {
+            let list = $(".activity-list", html);
+            $(".activity-list").html(list);
+        });
+    }, 5000);
+
 });
