@@ -13,20 +13,37 @@ btn1.addEventListener("mousedown", function() {
     chat.append(div)
     span1.innerText = nameS.value + ": "
     span2.innerText = massege.value
-    span1.style.color = color.value
-
-    fetch("https://it-academy-hamework2-default-rtdb.firebaseio.com/chat.json", {
-            method: "POST",
-            body: JSON.stringify({
-                name: nameS.value,
-                color: color.value,
-                massage: massege.value
-            })
-        })
+    span1.style.color = color.val
         // .then(function(response) {
         //     return response.json(person);
         // })
         // .then(function(data) {
         //     addPerson(data.name, person);
         // })
+
+    fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/")
+        .then(function(response) {
+            return response.json();
+        })
 });
+// fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/")
+//     .then(function(response) {
+//         return response.json();
+//     })
+// fetch('https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/chat.json')
+//     .then(function(response) {
+//         return response.json();
+//     })
+//     .then(function(data) {
+//         for (const key in data) {
+//             let div = document.createElement("div");
+//             let span = document.createElement("span");
+//             let spanSec = document.createElement("span");
+//             span.innerText = data[key].name + ": "
+//             spanSec.innerText = data[key].messege
+//             span.style.color = data[key].color
+//             chat.append(div);
+//             div.append(span);
+//             div.append(spanSec);
+//         }
+//     });
