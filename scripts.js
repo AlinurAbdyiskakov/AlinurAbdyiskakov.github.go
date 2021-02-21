@@ -14,13 +14,6 @@ btn1.addEventListener("mousedown", function() {
     span1.innerText = nameS.value + ": ";
     span2.innerText = massege.value;
     span1.style.color = color.value;
-    // .then(function(response) {
-    //     return response.json(person);
-    // })
-    // .then(function(data) {
-    //     addPerson(data.name, person);
-    // })
-
     fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/")
         .then(function(response) {
             return response.json();
@@ -46,4 +39,20 @@ btn1.addEventListener("mousedown", function() {
                 div.append(spanSec);
             }
         })
+
 });
+
+
+function addPerson(key, person) {
+
+    deleteButton.innerText = 'Delete';
+    tdActions.append(deleteButton);
+    deleteButton.addEventListener('mousedown', function() {
+        fetch(`https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/
+        ${key}.json`, {
+                method: "DELETE"
+            })
+            .then(function(response) {
+                tr.remove();
+            })
+    })
