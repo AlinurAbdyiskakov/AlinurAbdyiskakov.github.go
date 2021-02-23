@@ -4,12 +4,7 @@ let massege = document.querySelector('#massage')
 let color = document.querySelector('#color')
 let chat = document.querySelector('#chat')
 
-setInterval(() => {
-    $.get("/").thin(function(html) {
-        var list = $(".activity-list", html)
-        $(".activity-list").html(list)
-    })
-}, 1000);
+
 
 
 btn1.addEventListener("mousedown", function() {
@@ -48,5 +43,7 @@ btn1.addEventListener("mousedown", function() {
             }
         })
 
-
+    setTimeout(function reload() {
+        location = ''
+    }, 1000);
 });
