@@ -22,7 +22,7 @@ btn1.addEventListener("mousedown", function() {
             return response.json();
         });
     fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/chat.json", {
-        method: "POST",
+        method: "PUT",
         body: JSON.stringify({
             name: nameS.value,
             color: color.value,
