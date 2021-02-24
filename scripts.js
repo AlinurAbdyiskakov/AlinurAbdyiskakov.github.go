@@ -21,10 +21,7 @@ btn1.addEventListener("mousedown", function() {
         .then(function(response) {
             return response.json();
         });
-    fetch("https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/")
-        .then(function(response) {
-            return response.json();
-        })
+
     fetch('https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/chat.json')
         .then(function(response) {
             return response.json();
