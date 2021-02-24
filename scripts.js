@@ -28,7 +28,8 @@ btn1.addEventListener("mousedown", function() {
             color: color.value,
             massage: massege.value
         })
-    })
+    });
+
     fetch('https://it-acadamy-hamework-3-default-rtdb.firebaseio.com/chat.json')
         .then(function(response) {
             return response.json();
