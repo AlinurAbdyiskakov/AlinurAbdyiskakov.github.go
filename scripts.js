@@ -48,7 +48,7 @@ btn1.addEventListener("mousedown", function() {
             }
         })
 
-    setTimeout(function reload() {
-        location = ''
-    }, 1000);
+    // setTimeout(function reload() {
+    //     location = ''
+    // }, 1000);
 });
